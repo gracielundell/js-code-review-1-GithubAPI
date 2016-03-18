@@ -1,5 +1,5 @@
-var timeSince = function(alarmTime) {
-  this.Time = Time;
+var timeSince = function(time) {
+  this.Time = time;
 };
 
 timeSince.prototype.getTime = function() {

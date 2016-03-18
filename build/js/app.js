@@ -2,8 +2,8 @@
 exports.apiKey = "c5ec0fe99d9f88d779c24db15d2bea69952cbe2a";
 
 },{}],2:[function(require,module,exports){
-var timeSince = function(alarmTime) {
-  this.Time = Time;
+var timeSince = function(time) {
+  this.Time = time;
 };
 
 timeSince.prototype.getTime = function() {
@@ -14,7 +14,7 @@ exports.timeSince = timeSince;
 
 },{}],3:[function(require,module,exports){
 var apiKey = require("./../.env").apiKey;
-var time = require("./../js/timeSince.js").timeSince;
+var timeSince = require("./../js/timeSince.js").timeSince;
 
 $(document).ready(function() {
   $(".userInfo").hide();
@@ -27,13 +27,15 @@ $(document).ready(function() {
      '/repos?access_token=' + apiKey).then(function(response){
       $("#userName").html('<span>' + response[0].owner.login + '</span>');
       // get userAvatar
-      $("#userImg").html('<img src='+ response[0].owner.avatar_url+'>');
+      $("#userImg").append('<img src='+ response[0].owner.avatar_url+'>');
       $.get('https://api.github.com/users/' + userName + '/followers?access_token=' + apiKey).then(function(response){
         // get userRepos
         $(".postedRepos").empty();
         $.get('https://api.github.com/users/' + userName + '/repos?access_token=' + apiKey).then(function(response){
           for (i = 0; i < response.length; i ++) {
-            $(".postedRepos").append("<li><strong> Repository Name: </strong>" + response[i].name + "<br><strong>Date Created: </strong>" + response[i].created_at + "</li><br><br>");
+            var postDate = response[i].created_at;
+            var postTitle = response[i].name;
+            $(".postedRepos").append("<li><strong> Repository Name: </strong>" + postTitle + "<br><strong>Date Created: </strong>" + moment().format("LL", postDate) + "</li><br><br>");
           }; // end for-loop
         }); // end getRepos
       });
