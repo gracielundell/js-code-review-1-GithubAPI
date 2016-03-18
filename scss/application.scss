@@ -2,9 +2,27 @@ h1 {
   color: tomato;
 }
 
-#userImg {
-  img {
-    height: 150px;
-    width: 150px;
+.userInfo {
+
+  #userImg {
+    img {
+      height: 150px;
+      width: 150px;
+    }
   }
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    li {
+      list-style: none;
+      margin: 5px;
+      width: 33%;
+    }
+  }
+  .postedRepos {
+    padding: 0;
+  }
+
 }
