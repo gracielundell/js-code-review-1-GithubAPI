@@ -2,13 +2,19 @@
 <html>
   <head>
     <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="build/css/application.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
-    <title>API</title>
+    <title>Github API</title>
   </head>
   <body>
     <div class="container">
-      <h1>poop</h1>
+      <h1>GitHub Repo</h1>
+      <form id="searchForm" action="index.html" method="post">
+        <label for="inputSearch">Enter a Github User to Search</label>
+        <input id="inputSearch" type="text"></input>
+        <button id="submitBtn" type="submit">Search Repo's</button>
+      </form>
     </div>
   </body>
 </html>

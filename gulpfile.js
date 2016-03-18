@@ -22,7 +22,6 @@ var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 
-
 gulp.task('jsBrowserify', function() {
   return browserify({ entries: ['./js/browser.js'] })
     .bundle()
@@ -68,6 +67,7 @@ gulp.task("build", ['clean'], function(){
     gulp.start('jsBrowserify');
   }
   gulp.start('bower');
+  gulp.start('cssBuild');
 });
 
 gulp.task('jshint', function(){

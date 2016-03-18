@@ -16,7 +16,7 @@
   "dependencies": {
     "bootstrap": "^3.3.6",
     "moment": "^2.12.0",
-    "jquery": "^2.2.1"
+    "jquery": "^2.2.2"
   },
   "authors": [
     "Gracie Lundell <gracielundell@gmail.com>"
