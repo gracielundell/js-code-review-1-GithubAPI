@@ -20,6 +20,7 @@ $(document).ready(function() {
   $(".userInfo").hide();
   $("form#searchForm").submit(function(event) {
     $("#inputSearch").empty();
+    $(".header").css("max-height", "200px");
     var userName = $("#inputSearch").val();
     // get username
     $("#userImg").empty();

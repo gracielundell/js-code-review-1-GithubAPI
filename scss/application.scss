@@ -1,24 +1,60 @@
-h1 {
-  color: tomato;
+.container {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background: oldlace;
 }
 
-.userInfo {
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  background-image: url("../../img/space.jpg");
+  background-position: center;
+  background-size: cover;
+  form {
+    display: flex;
+    flex-direction: row;
+  }
+  h1 {
+    color: white;
+    margin: 20px;
+  }
+  // input {
+  //   width: 200px;
+  //   font-size: 20px;
+  // }
+  // button {
+  //   height: 35px;
+  //   width: 60px;
+  // }
+}
 
+
+.userInfo {
+  padding: 3% 10%;
+  text-align: center;
   #userImg {
     img {
-      height: 150px;
-      width: 150px;
+      height: 200px;
+      width: 200px;
+      border-radius: 5px;
     }
   }
   ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 95%;
+    justify-content: center;
+    text-align: left;
     li {
       list-style: none;
-      margin: 5px;
+      margin: 10px;
       width: 33%;
+      font-size: 17px;
     }
   }
   .postedRepos {
