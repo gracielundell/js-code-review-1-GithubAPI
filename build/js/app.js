@@ -19,15 +19,15 @@ var time = require("./../js/timeSince.js").timeSince;
 $(document).ready(function() {
   $(".userInfo").hide();
   $("form#searchForm").submit(function(event) {
+    $("#inputSearch").empty();
     var userName = $("#inputSearch").val();
     // get username
-    $("#inputSearch").empty();
     $("#userImg").empty();
     $.get('https://api.github.com/users/' + userName +
      '/repos?access_token=' + apiKey).then(function(response){
-      $("#userName").append('<span>' + response[0].owner.login + '</span>');
-      $("#userImg").append('<img src='+ response[0].owner.avatar_url+'>');
+      $("#userName").html('<span>' + response[0].owner.login + '</span>');
       // get userAvatar
+      $("#userImg").html('<img src='+ response[0].owner.avatar_url+'>');
       $.get('https://api.github.com/users/' + userName + '/followers?access_token=' + apiKey).then(function(response){
         // get userRepos
         $(".postedRepos").empty();
