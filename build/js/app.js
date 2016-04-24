@@ -36,7 +36,8 @@ $(document).ready(function() {
           for (i = 0; i < response.length; i ++) {
             var postDate = response[i].created_at;
             var postTitle = response[i].name;
-            $(".postedRepos").append("<li><strong> Repository Name: </strong>" + postTitle + "<br><strong>Date Created: </strong>" + moment().format("LL", postDate) + "</li><br><br>");
+            $(".postedRepos").append("<li><strong> Repository Name: </strong>" + postTitle + "<br><strong>Date Created: </strong>" + moment(postDate).format("LL") + "</li><br><br>");
+            console.log("postDate: ", postDate);
           }; // end for-loop
         }); // end getRepos
       });
